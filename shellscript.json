@@ -1,0 +1,280 @@
+//=============================== shellscript.json ===============================//
+
+
+//--------------------------------- Description ----------------------------------//
+//
+// This is a snippet you can use in bash or shell scripts which allows you to add
+// documentation to your bash/shell code, including :
+// 	- A function documentation
+// 	- A file template
+// 	- Two "for" method templates
+// 	- A "if" method template
+// 	- A "switch case" method template
+// 	- A "while" method template
+//  - A title method which allows you to ad titles in your test scripts
+//  - A color import template
+//  - A Style import template
+// 
+//--------------------------------------------------------------------------------//
+
+
+//----------------------------------- Authors ------------------------------------//
+//
+// Sébastien HERT
+//
+//--------------------------------------------------------------------------------//
+
+
+//----------------------------------- Commands -----------------------------------//
+
+{
+	"shebang" : {
+		"prefix" : ["shebang"],
+		"body" : [
+			"#!/bin/bash"
+		],
+		"description" : "shebang for bash script"
+	},
+
+	"Shell for ... done":{
+		"prefix": "for",
+		"body": [
+			"for (( ${1|i,j,k|} = ${2:0}; ${1|i,j,k|} ${3|<,<=,>,>=|} ${4:10}; ${1|i,j,k|}++ )); do",
+			"\t${5:#statements}",
+			"done"
+		],
+		"description": "for (( i=0 ; i<10 ; i++ ))"
+	},
+
+	"Shell for in done":{
+		"prefix": "for",
+		"body": [
+			"for ${1|i,j,k|} in ${2:words}; do",
+			"\t${3:#statements}",
+			"done"
+		],
+		"description": "for i in words"
+	},
+
+	"Shell case":{
+		"prefix": ["case","switch"],
+		"body": [
+			"case ${1:word} in",
+				"\t${2:pattern} )",
+					"\t\t${3:#statements};;",
+				"\t${4:pattern} )",
+					"\t\t${5:#statements};;",
+				"\t*)",
+					"\t\t${6:#default statements};;",
+			"esac"
+		],
+		"description": "switch case"
+	},
+
+	"Shell if":{
+		"prefix": ["if"],
+		"body": [
+			"if [[ ${1:condition} ]]; then",
+				"\t${2:#statements}",
+			"elif [[ ${3:condition} ]]; then",
+				"\t${4:#statements}",
+			"else",
+				"\t${5:#statements}",
+			"fi"
+		],
+		"description": "if ... elif ... else ..."
+	},
+
+	"Shell while":{
+		"prefix": ["while"],
+		"body": [
+			"while [[ ${1:condition} ]]; do",
+				"\t${2:#statements}",
+			"done"
+		],
+		"description": "for in done"
+	},
+
+	"Shell Function documentation": {
+		"prefix" : ["docFunction","functionDoc"],
+		"body" : [
+			"###",
+			"# Description : $1\n#",
+
+			"# Input :",
+			"# - ${2:None}\n#",
+
+			"# Output :",
+			"# - ${3:None}\n#",
+
+			"# Authors :",
+			"# - ${4:Sébastien HERT}",
+			"###"
+		],
+		"description": "Adds Shell/Bash documentation to a function"
+	},
+
+	"Shell File documentation": {
+		"prefix": ["createFile", "newFile", "file", "docFile"],
+		"body": [
+			"#!/bin/bash\n\n",
+
+
+			"$LINE_COMMENT==$1$2 $TM_FILENAME ==$1$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT--------------------------------- Description ----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT $3",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT----------------------------------- Synopsis -----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT ./$TM_FILENAME <$5> <$6>$4",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT----------------------------------- Options ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT + ${5:option1} :",
+			"$LINE_COMMENT  * ${7:Description}",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT + ${6:option2} :",
+			"$LINE_COMMENT  * ${8:Description}",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT----------------------------------- Authors ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT Sébastien HERT$9",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"$LINE_COMMENT----------------------------------- Imports ------------------------------------$LINE_COMMENT\n",
+
+			"DEFAULT=\"\\e[0m\"",
+			"BOLT=\"\\e[1m\"",
+			"UNDERLINED=\"\\e[4m\"\n",
+
+			"RED=\"\\e[38;5;196m\"",
+			"GREEN=\"\\e[38;5;40m\"",
+			"YELLOW=\"\\e[38;5;226m\"",
+			"BLUE=\"\\e[38;5;33m\"",
+			"ORANGE=\"\\e[38;5;208m\"",
+			"PURPLE=\"\\e[38;5;165m\"\n",
+
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT------------------------------- Global Variables -------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT---------------------------------- Functions -----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT------------------------------------- Main -------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT================================================================================$LINE_COMMENT",
+		],
+		"description": "Adds Shell/Bash documentation to a file"
+	},
+
+	"Create the methods Title" : {
+		"prefix" : ["createTitle", "TitleMethod", "functionTitle", "methodTitle"],
+		"body" : [
+			"title(){",
+				"\t###",
+				"\t# Description : Displays a Title in the terminal",
+				"\t#",
+				"\t# Input :",
+				"\t# - The color as an option",
+				"\t# - The separator (=,-,+, etc)",
+				"\t# - The title to display as a String",
+				"\t#",
+				"\t# Output :",
+				"\t# - Display in a shell terminal",
+				"\t#",
+				"\t# Authors :",
+				"\t# - Sébastien HERT",
+				"\t###\n",
+
+				"\tlenTitle=80\n",
+			
+				"\tif [ $# -eq 0 ]; then",
+					"\t\tparam=\"Titre\"",
+					"\t\tid=\"=\"",
+					"\t\tcolor=\\$purple",
+				"\telif [ $# -eq 1 ]; then",
+					"\t\tparam=\\$1",
+					"\t\tid=\"=\"",
+					"\t\tcolor=\\$purple",
+				"\telif [ $# -eq 2 ]; then",
+					"\t\tparam=\\$2",
+					"\t\tid=\\$1",
+					"\t\tcolor=\\$purple",
+				"\telif [ $# -eq 3 ]; then",
+					"\t\tparam=\\$3",
+					"\t\tid=\\$2",
+					"\t\tcolor=\\$1",
+				"\telse",
+					"\t\techo error",
+					"\t\texit",
+				"\tfi\n",
+			
+				"\tlenParam=\\${#param}",
+				"\tlenEq1=\\$(( (\\$lenTitle-\\$lenParam)/2 -1 ))",
+				"\tlenEq2=\\$(( \\$lenTitle-\\$lenParam-\\$lenEq1-2 ))",
+				"\ttitle=\"\"",
+				"\tfor (( i = 0; i < \\$lenEq1; i++ )); do",
+					"\t\ttitle=\"\\${title}\\$id\"",
+				"\tdone",
+				"\ttitle=\"\\${title} \\$param \"",
+				"\tfor (( i = 0; i < \\$lenEq2; i++ )); do",
+					"\t\ttitle=\"\\${title}\\$id\"",
+				"\tdone\n",
+			
+				"\techo -e \\${color}\\${bolt}\\${title}\\${color}\\${default}\"\\n\"",
+				"}",
+		],
+		"description" : "Creates the Title methods which allows you to create sweet Titles in your test scripts"
+	},
+
+	"Shell colors" : {
+		"prefix" : ["colors"],
+		"body" : [
+			"RED=\"\\e[38;5;196m\"",
+			"GREEN=\"\\e[38;5;40m\"",
+			"YELLOW=\"\\e[38;5;226m\"",
+			"BLUE=\"\\e[38;5;33m\"",
+			"ORANGE=\"\\e[38;5;208m\"",
+			"PURPLE=\"\\e[38;5;165m\"\n"
+		],
+		"description" : "Adds some colors for echo -e"
+	},
+
+	"Shell Style" : {
+		"prefix" : ["styles"],
+		"body" : [
+			"DEFAULT=\"\\e[0m\"",
+			"BOLT=\"\\e[1m\"",
+			"UNDERLINED=\"\\e[4m\"\n"
+		],
+		"description" : "Adds some styles for echo -e"
+	},
+}
+
+//--------------------------------------------------------------------------------//
+
+
+//================================================================================//

@@ -1,0 +1,99 @@
+//================================== java.json ===================================//
+
+
+//--------------------------------- Description ----------------------------------//
+//
+// This is a snippet you can use in java which allows you to add a template
+// documentation for java files and a "print" shortcut
+//
+//--------------------------------------------------------------------------------//
+
+
+//----------------------------------- Authors ------------------------------------//
+//
+// Sébastien HERT
+//
+//--------------------------------------------------------------------------------//
+
+
+//----------------------------------- Commands -----------------------------------//
+
+{
+	"Java File Documentation" : {
+		"prefix": ["createFile", "newFile", "file", "docFile"],
+		"body" : [
+			"$LINE_COMMENT==$2$3 ${1|Class,Interface|} $TM_FILENAME_BASE ==$2$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT--------------------------------- Description ----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT $4",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Authors ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT Sébastien HERT$5",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"$LINE_COMMENT----------------------------------- Package ------------------------------------$LINE_COMMENT\n",
+
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"$LINE_COMMENT----------------------------------- Imports ------------------------------------$LINE_COMMENT\n",
+
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"public ${6|class,abstract class,interface|} $TM_FILENAME_BASE ${7:extends $8} ${9:implements $10} {\n\n",
+
+			"$LINE_COMMENT------------------------------- Class Variables --------------------------------$LINE_COMMENT\n",
+
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT--------------------------------- Constructors ---------------------------------$LINE_COMMENT\n",
+
+				"\tpublic $TM_FILENAME_BASE($11){\n\t\t${12:$LINE_COMMENT constructor}\n\t}\n",
+
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Setters ------------------------------------$LINE_COMMENT\n",
+
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Getters ------------------------------------$LINE_COMMENT\n",
+
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+			
+
+			"$LINE_COMMENT----------------------------------- Methods ------------------------------------$LINE_COMMENT\n",
+
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n",
+
+			"}\n\n",
+
+			"$LINE_COMMENT================================================================================$LINE_COMMENT",
+		],
+		"description" : "Adds documentation to a java file"
+	},
+
+	"System.out.println()" : {
+		"prefix" : ["println"],
+		"body" : [
+			"System.out.println(\"$1\");"
+		],
+		"description" : "A shortcut for the print method"
+	},
+
+
+}
+
+//--------------------------------------------------------------------------------//
+
+
+//================================================================================//

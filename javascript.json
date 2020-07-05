@@ -1,0 +1,135 @@
+//=============================== javascript.json ================================//
+
+
+//--------------------------------- Description ----------------------------------//
+//
+// This is a snippet you can use in javascript which allows you to add documentation
+// to your js code, including :
+// 	- A function documentation
+// 	- A template for non-class files
+// 	- A template for class files
+// 
+//--------------------------------------------------------------------------------//
+
+
+//----------------------------------- Authors ------------------------------------//
+//
+// Sébastien HERT
+//
+//--------------------------------------------------------------------------------//
+
+
+//----------------------------------- Commands -----------------------------------//
+
+{
+	"JS Function Documentation": {
+		"prefix" : ["docFunction","functionDoc"],
+		"body" : [
+			"$BLOCK_COMMENT_START*",
+			" * Description : $1\n *",
+
+			" * Input :",
+			" * - ${2:None}\n *",
+
+			" * Output :",
+			" * - ${3:None}\n *",
+
+			" * Authors :",
+			" * - ${4:Sébastien HERT}",
+			" $BLOCK_COMMENT_END"
+		],
+		"description": "Adds javascript documentation to a function"
+	},
+
+	"JS File Documentation": {
+		"prefix": ["createFile", "newFile", "file", "docFile"],
+		"body": [
+			"$LINE_COMMENT==$1$2 $TM_FILENAME ==$1$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT--------------------------------- Description ----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT $3",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT----------------------------------- Authors ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT Sébastien HERT$4",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT----------------------------------- Imports ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT------------------------------- Global Variables -------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT---------------------------------- Functions -----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT------------------------------------- Main -------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT================================================================================$LINE_COMMENT",
+		],
+		"description": "Adds javascript documentation to a file"
+	},
+
+	"JS ClassFile Documentation": {
+		"prefix": ["createClass", "newClass", "class", "docClass"],
+		"body": [
+			"$LINE_COMMENT==$1$2 Class $TM_FILENAME_BASE ==$1$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT--------------------------------- Description ----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT $3",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Authors ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT Sébastien HERT$4",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Imports ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"class $TM_FILENAME_BASE {\n\n",
+
+
+			"$LINE_COMMENT--------------------------------- Constructor ----------------------------------$LINE_COMMENT\n",
+
+				"\tconstructor($3){\n\t\t${5:$LINE_COMMENT constructor}\n\t}\n",
+
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"}\n",
+
+			"$LINE_COMMENT================================================================================$LINE_COMMENT",
+		],
+		"description": "Adds javascript documentation to a class file"
+	}
+}
+
+//--------------------------------------------------------------------------------//
+
+
+//================================================================================//

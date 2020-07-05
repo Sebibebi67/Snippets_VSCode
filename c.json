@@ -1,0 +1,116 @@
+//==================================== c.json ====================================//
+
+
+//--------------------------------- Description ----------------------------------//
+//
+// This is a snippet you can use in C which allows you to add documentation to
+// your C code, including :
+// 	- A function documentation
+// 	- A file template
+//  - Some shortcuts for libs
+//
+//--------------------------------------------------------------------------------//
+
+
+//----------------------------------- Authors ------------------------------------//
+//
+// Sébastien HERT
+//
+//--------------------------------------------------------------------------------//
+
+
+//----------------------------------- Commands -----------------------------------//
+
+{
+	"Include printf lib" : {
+		"prefix" : ["libPrintf", "stdio.h"],
+		"body" : [
+			"#include <stdio.h>"
+		],
+		"description" : "Adding stdio.h"
+	},
+
+	"Include boolean lib" : {
+		"prefix" : ["libBool", "stdbool.h"],
+		"body" : [
+			"#include <stdbool.h>"
+		],
+		"description" : "description"
+	},
+
+	"C Function Documentation": {
+		"prefix" : ["docFunction","functionDoc"],
+		"body" : [
+			"$BLOCK_COMMENT_START*",
+			" * Description : $1\n *",
+
+			" * Input :",
+			" * - ${2:void}\n *",
+
+			" * Output :",
+			" * - ${3:void}\n *",
+
+			" * Authors :",
+			" * - ${4:Sébastien HERT}",
+			" $BLOCK_COMMENT_END"
+		],
+		"description": "Adds C documentation to a function"
+	},
+
+	"C File Documentation": {
+		"prefix": ["createFile", "newFile", "file", "docFile"],
+		"body": [
+			"$LINE_COMMENT==$1$2 $TM_FILENAME ==$1$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT--------------------------------- Description ----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT $3",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Authors ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT Sébastien HERT$4",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Includes -----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT---------------------------- Functions Declarations ----------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT------------------------------- Global Variables -------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+			
+			
+			"$LINE_COMMENT------------------------------------- Main -------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT---------------------------------- Functions -----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT================================================================================$LINE_COMMENT",
+		],
+		"description": "Adds C documentation to a file"
+	}
+
+
+}
+
+//--------------------------------------------------------------------------------//
+
+
+//================================================================================//	

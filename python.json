@@ -1,0 +1,174 @@
+//================================= python.json ==================================//
+
+
+//--------------------------------- Description ----------------------------------//
+//
+// This is a snippet you can use in python which allows you to add documentation to
+// your python code, including :
+// 	- A function documentation
+// 	- A file template
+// 
+//--------------------------------------------------------------------------------//
+
+
+//----------------------------------- Authors ------------------------------------//
+//
+// Sébastien HERT
+//
+//--------------------------------------------------------------------------------//
+
+
+//----------------------------------- Commands -----------------------------------//
+
+{
+	"Python Function Documentation": {
+		"prefix" : ["docFunction","functionDoc"],
+		"body" : [
+			"'''",
+			"Description : $1\n",
+
+			"Input :",
+			"- ${2:None}\n",
+
+			"Output :",
+			"- ${3:None}\n",
+
+			"Authors :",
+			"- ${4:Sébastien HERT}",
+			"'''"
+		],
+		"description": "Adds Python documentation to a function"
+	},
+
+	"Python File Documentation": {
+		"prefix": ["createFile", "newFile", "file", "docFile"],
+		"body": [
+			"#!/usr/bin/python3\n\n",
+
+
+			"$LINE_COMMENT==$1$2 $TM_FILENAME ==$1$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT------------------------------------ Coding ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT -*- coding: ${3:utf-8} -*-",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT--------------------------------- Description ----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT $4",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Synopsis -----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT ./$TM_FILENAME <$6> <$7>$5",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			
+			"$LINE_COMMENT----------------------------------- Options ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT + ${6:option1} :",
+			"$LINE_COMMENT  * ${8:Description}",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT + ${7:option2} :",
+			"$LINE_COMMENT  * ${9:Description}",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Authors ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT Sébastien HERT$10",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Imports ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT------------------------------- Global Variables -------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT---------------------------------- Functions -----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT------------------------------------- Main -------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT================================================================================$LINE_COMMENT",
+		],
+		"description": "Adds Python documentation to a file"
+	},
+
+	"Python ClassFile Documentation": {
+		"prefix": ["createClass", "newClass", "class", "docClass"],
+		"body": [
+			"$LINE_COMMENT==$6$7 Class $TM_FILENAME_BASE ==$6$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT------------------------------------ Coding ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT -*- coding: ${1:utf-8} -*-",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT--------------------------------- Description ----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT $2",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Authors ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT Sébastien HERT$3",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Imports ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"class $TM_FILENAME_BASE :\n\n",
+
+			"$LINE_COMMENT------------------------------- Class Variables --------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT--------------------------------- Constructor ----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+				"\tdef __init__(self, $4):",
+				"\t\t${5:print(\"constructor\")}",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"$LINE_COMMENT----------------------------------- Methods ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT================================================================================$LINE_COMMENT",
+		],
+		"description": "Adds Python documentation to a file"
+	}
+}
+
+//--------------------------------------------------------------------------------//
+
+
+//================================================================================//
