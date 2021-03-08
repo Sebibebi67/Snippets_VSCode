@@ -126,6 +126,13 @@
 			"$LINE_COMMENT================================================================================$LINE_COMMENT",
 		],
 		"description": "Adds javascript documentation to a class file"
+	},
+	"print alias" : {
+		"prefix" : ["print", "console.log"],
+		"body" : [
+			"console.log($1);"
+		],
+		"description" : "description"
 	}
 }
 

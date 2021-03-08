@@ -42,7 +42,115 @@
 		],
 		"description" : "Adds a template to your README file"
 	},
+	"Title template":{
+		"prefix" : ["title"],
+		"body" :[
+			"# **${1:title}**"
+		],
+		"description" : "Make a title"
+	},
+	"SubTitle template":{
+		"prefix" : ["subtitle"],
+		"body" :[
+			"## **${1:subtitle}**"
+		],
+		"description" : "Make a subtitle"
+	},
+	"SubsubTitle template":{
+		"prefix" : ["subsubtitle"],
+		"body" :[
+			"### **${1:subsubtitle}**"
+		],
+		"description" : "Make a subsubtitle"
+	},
+	"Block" : {
+		"prefix" : ["block"],
+		"body" : [
+			"```$1",
+			"$2",
+			"```"
+		],
+		"description" : "this is a block for scripts in specific language"
+	},
+	"Maths block" : {
+		"prefix" : ["maths"],
+		"body" : [
+			"$$ $1 $$"
+		],
+		"description" : "This is a maths block"
+	},
+	"Maths sum" : {
+		"prefix" : ["sum"],
+		"body" : [
+			"\\sum _{k=0} ^{+\\infty} {x_i}"
+		],
+		"description" : "Sum"
+	},
 
+	"Infinity" : {
+		"prefix" : ["infinity"],
+		"body" : [
+			"\\infty"
+		],
+		"description" : "description"
+	},
+
+	"iff" : {
+		"prefix" : ["iff", "ssi"],
+		"body" : [
+			"\\Longleftrightarrow"
+		],
+		"description" : "description"
+	},
+
+	"involvement" : {
+		"prefix" : ["involvement", "implique"],
+		"body" : [
+			"\\Longrightarrow"
+		],
+		"description" : "description"
+	},
+
+	"arrow" : {
+		"prefix" : ["arrow"],
+		"body" : [
+			"\\longrightarrow"
+		],
+		"description" : "description"
+	},
+
+	"forall" : {
+		"prefix" : ["forall", "pourtout"],
+		"body" : [
+			"\\forall"
+		],
+		"description" : "description"
+	},
+	"fraction" : {
+		"prefix" : ["frac"],
+		"body" : [
+			"\\frac{${1:a}}{${2:b}}"
+		],
+		"description" : "description"
+	},
+	"Set" : {
+		"prefix" : ["ens", "set"],
+		"body" : [
+			"\\{ ${1} {\\}} "
+		],
+		"description" : "description"
+	},
+
+
+	"array" : {
+		"prefix" : ["array", "table"],
+		"body" : [
+			"|${1:type1}|${2:type2}|",
+			"|-|-|",
+			"|${3:item1}|${4:item2}|"
+		],
+		"description" : "description"
+	},
 
 }
 

@@ -1,0 +1,181 @@
+//=================================== cpp.json ===================================//
+
+
+//--------------------------------- Description ----------------------------------//
+//
+// 
+//
+//--------------------------------------------------------------------------------//
+
+
+//----------------------------------- Authors ------------------------------------//
+//
+// Sébastien HERT
+//
+//--------------------------------------------------------------------------------//
+
+
+//----------------------------------- Commands -----------------------------------//
+
+{
+	"C++ Class Header" : {
+		"prefix" : ["class Header, header class"],
+		"body" : [
+			"$LINE_COMMENT==$6$7 Class $TM_FILENAME_BASE ==$6$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT--------------------------------- Description ----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT $2",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Authors ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT Sébastien HERT$3",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"$LINE_COMMENT----------------------------------- Imports ------------------------------------$LINE_COMMENT\n",
+			"#ifndef ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H",
+			"#define ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H\n",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"class $TM_FILENAME_BASE {\n\n",
+
+			"$LINE_COMMENT------------------------------- Class Variables --------------------------------$LINE_COMMENT\n",
+			"\tpublic:\n\n",
+			"\tprivate:\n",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"$LINE_COMMENT--------------------------------- Constructors ---------------------------------$LINE_COMMENT",
+			"\n\tpublic:",
+			"\t\t$TM_FILENAME_BASE();\n",
+
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"$LINE_COMMENT----------------------------------- Methods ------------------------------------$LINE_COMMENT\n",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"};\n",
+			"#endif\n",
+			"$LINE_COMMENT================================================================================$LINE_COMMENT",
+			
+		],
+		"description" : "Adds C++ header documentation to a class file"
+	},
+	"C++ Class" : {
+		"prefix" : ["createClass", "newClass", "class", "docClass"],
+		"body" : [
+			"$LINE_COMMENT==$6$7 Class $TM_FILENAME_BASE ==$6$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT--------------------------------- Description ----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT $2",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Authors ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT Sébastien HERT$3",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"$LINE_COMMENT----------------------------------- Imports ------------------------------------$LINE_COMMENT\n",
+
+			"#include \"$TM_FILENAME_BASE.hpp\"\n",
+
+
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"$LINE_COMMENT--------------------------------- Constructors ---------------------------------$LINE_COMMENT",
+
+			"\n$TM_FILENAME_BASE::$TM_FILENAME_BASE(){}\n",
+
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"$LINE_COMMENT----------------------------------- Methods ------------------------------------$LINE_COMMENT\n",
+			"$LINE_COMMENT$TM_FILENAME_BASE::method();\n",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+			"$LINE_COMMENT================================================================================$LINE_COMMENT",
+			
+		],
+		"description" : "Adds C++ documentation to a class file"
+	},
+
+	"file" : {
+		"prefix" : ["file"],
+		"body" : [
+			"$LINE_COMMENT==$6 $TM_FILENAME ==$6$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT--------------------------------- Description ----------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT $2",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Authors ------------------------------------$LINE_COMMENT",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT Sébastien HERT$3",
+			"$LINE_COMMENT",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"$LINE_COMMENT----------------------------------- Imports ------------------------------------$LINE_COMMENT\n",
+
+			"#ifndef ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}",
+			"#define ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}\n",
+
+			"#endif\n",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+
+			"$LINE_COMMENT----------------------------------- Methods ------------------------------------$LINE_COMMENT\n",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+			"$LINE_COMMENT------------------------------------- Main -------------------------------------$LINE_COMMENT\n",
+			"$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+			"$LINE_COMMENT================================================================================$LINE_COMMENT",
+		],
+		"description" : "Adds a doc to a file"
+	},
+
+	"include iostream" : {
+		"prefix" : ["iostream","include print", "print include"],
+		"body" : [
+			"#include <iostream>"
+		],
+		"description" : "include the lib iostream"
+	},
+
+	"print" : {
+		"prefix" : ["print"],
+		"body" : [
+			"cout << \"$1\" << endl;"
+		],
+		"description" : "display in terminal"
+	},
+	
+	"doc": {
+		"prefix": ["doc"],
+		"body": [
+		  "/**",
+		  " * ${1:description}",
+		  " * @param ${2:Type} ${3:description}",
+		  " * @return ${4:None}",
+		  " * @author Sébastien HERT",
+		  " */"
+		],
+		"description": "method doc"
+	}
+
+}
+
+//--------------------------------------------------------------------------------//
+
+
+//================================================================================//

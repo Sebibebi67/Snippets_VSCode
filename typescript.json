@@ -1,0 +1,129 @@
+{
+  //=============================== typescript.json ================================//
+
+  //--------------------------------- Description ----------------------------------//
+  //
+  // This script presents some snippets templates for Typescript
+  //
+  //--------------------------------------------------------------------------------//
+
+  //----------------------------------- Authors ------------------------------------//
+  //
+  // Sébastien HERT
+  //
+  //--------------------------------------------------------------------------------//
+
+  //----------------------------------- Commands -----------------------------------//
+
+  "doc": {
+    "prefix": ["doc"],
+    "body": [
+      "/**",
+      " * @description $1",
+      " * @param ${2:Type} ${3:description}",
+      " * @returns ${4:None}",
+      " * @author Sébastien HERT",
+      " */"
+    ],
+    "description": "method doc"
+  },
+  "TS File Documentation": {
+    "prefix": ["createFile", "newFile", "file", "docFile"],
+    "body": [
+      "$LINE_COMMENT==$1$2 $TM_FILENAME ==$1$LINE_COMMENT\n\n",
+
+      "$LINE_COMMENT--------------------------------- Description ----------------------------------$LINE_COMMENT",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT $4",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+      "$LINE_COMMENT----------------------------------- Authors ------------------------------------$LINE_COMMENT",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT Sébastien HERT$10",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+      "$LINE_COMMENT----------------------------------- Imports ------------------------------------$LINE_COMMENT",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+      "$LINE_COMMENT------------------------------- Global Variables -------------------------------$LINE_COMMENT",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+      "$LINE_COMMENT---------------------------------- Functions -----------------------------------$LINE_COMMENT",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+      "$LINE_COMMENT------------------------------------- Main -------------------------------------$LINE_COMMENT",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+      "$LINE_COMMENT================================================================================$LINE_COMMENT"
+    ],
+    "description": "Adds TS documentation to a file"
+  },
+
+  "Python ClassFile Documentation": {
+    "prefix": ["createClass", "newClass", "class", "docClass"],
+    "body": [
+      "$LINE_COMMENT==$6$7 Class $TM_FILENAME_BASE ==$6$LINE_COMMENT\n\n",
+
+      "$LINE_COMMENT--------------------------------- Description ----------------------------------$LINE_COMMENT",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT $2",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+      "$LINE_COMMENT----------------------------------- Authors ------------------------------------$LINE_COMMENT",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT Sébastien HERT$3",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+      "$LINE_COMMENT----------------------------------- Imports ------------------------------------$LINE_COMMENT",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+      "export class $TM_FILENAME_BASE {\n\n",
+
+      "$LINE_COMMENT------------------------------- Class Variables --------------------------------$LINE_COMMENT",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+      "$LINE_COMMENT--------------------------------- Constructor ----------------------------------$LINE_COMMENT",
+      "$LINE_COMMENT",
+      "\tconstructor(){",
+      "\t\t${5:console.log(\"constructor\")}",
+      "\t}",
+      "$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+      "$LINE_COMMENT----------------------------------- Methods ------------------------------------$LINE_COMMENT",
+      "$LINE_COMMENT",
+      "$LINE_COMMENT--------------------------------------------------------------------------------$LINE_COMMENT\n\n",
+
+      "}",
+      "$LINE_COMMENT================================================================================$LINE_COMMENT"
+    ],
+    "description": "Adds TS documentation to a file"
+  },
+  "print alias" : {
+		"prefix" : ["print", "console.log"],
+		"body" : [
+			"console.log($1);"
+		],
+		"description" : "description"
+  },
+  "Adam" : {
+    "prefix" : ["Adam"],
+    "body" : [
+      "Adam RIVIÈRE"
+    ],
+    "description" : "description"
+  },
+
+  //--------------------------------------------------------------------------------//
+
+  //================================================================================//
+}

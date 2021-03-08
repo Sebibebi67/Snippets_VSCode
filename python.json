@@ -165,7 +165,24 @@
 			"$LINE_COMMENT================================================================================$LINE_COMMENT",
 		],
 		"description": "Adds Python documentation to a file"
-	}
+	},
+	"shebang" : {
+		"prefix" : ["shebang"],
+		"body" : [
+			"#!/usr/bin/python3"
+		],
+		"description" : "shebang python3"
+	},
+	"main" : {
+		"prefix" : ["main"],
+		"body" : [
+			"def main():",
+			"\tprint(\"Hello World\")\n\n",
+			"if __name__ == \"__main__\":",
+			"\tmain()",
+		],
+		"description" : "description"
+	},
 }
 
 //--------------------------------------------------------------------------------//
